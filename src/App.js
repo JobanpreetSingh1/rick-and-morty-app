@@ -1,25 +1,22 @@
-import logo from './logo.svg';
+// App.js
+import React, { useState } from 'react';
+import EpisodeList from './components/episodelist';
+import CharacterList from './components/characterlist';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const [selectedEpisode, setSelectedEpisode] = useState(null);
+
+    const handleSelectEpisode = (episodeId) => {
+        setSelectedEpisode(episodeId);
+    };
+
+    return (
+        <div className="app">
+            <EpisodeList onSelectEpisode={handleSelectEpisode} selectedEpisode={selectedEpisode} />
+            <CharacterList episodeId={selectedEpisode} />
+        </div>
+    );
+};
 
 export default App;

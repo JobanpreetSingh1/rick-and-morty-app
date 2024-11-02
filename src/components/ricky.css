@@ -1,0 +1,82 @@
+/* EpisodeList */
+
+.episode-list {
+    flex: 1;
+    max-width: 300px;
+    max-height: 400px; /* Set a max height for scrollability */
+    overflow-y: auto; /* Enable vertical scroll */
+    border-right: 2px solid #e0e0e0;
+    padding-right: 20px;
+}
+
+.episode-list h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.episode-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.episode-item {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.episode-item:hover {
+    background-color: #f7f7f7;
+}
+
+.episode-item.selected {
+    background-color: #d1e0ff;
+    font-weight: bold;
+}
+
+/* Hide the episode list on mobile if an episode is selected */
+@media (max-width: 768px) {
+    .episode-list.hide {
+        display: none;
+    }
+}
+
+/* CharacterList */
+
+.character-list {
+    flex: 3;
+    padding: 0 20px;
+}
+
+.character-list h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.character-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.character-item img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.character-item p {
+    margin: 0;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #333;
+}
